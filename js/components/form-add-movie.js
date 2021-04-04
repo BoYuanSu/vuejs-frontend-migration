@@ -9,7 +9,7 @@ const FormAddMovie = {
           label: 'Title in Chinese',
           value: '',
           type: 'text',
-          rules: 'required',
+          rules: 'required|min:1|max:50',
           placeholder: '金牌特務',
         },
         {
@@ -17,7 +17,7 @@ const FormAddMovie = {
           label: 'Title in Englis',
           value: '',
           type: 'text',
-          rules: 'required',
+          rules: 'required|min:1|max:100|special',
           placeholder: 'Kingsman',
         },
         {
@@ -25,7 +25,7 @@ const FormAddMovie = {
           label: 'Intro',
           value: '',
           type: 'text',
-          rules: 'required',
+          rules: 'required|intro|min:10|max:255',
           placeholder: '是一部於2015年上映，由英國、美國合拍的諜報喜劇動作片...',
         },
       ],

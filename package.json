@@ -5,7 +5,7 @@
   "scripts": {
     "serve": "parcel ./index.html -d ./dev --no-source-maps --no-autoinstall --no-cache",
     "build": "rm -rf ./dist && parcel build ./index.html -d ./dist --no-source-maps --no-cache",
-    "run:app": "node app.js"
+    "start": "node app.js"
   },
   "repository": "git@github.com:BoYuanSu/vuejs-frontend-migration.git",
   "author": "BYSu <mayday15221@gmail.com>",

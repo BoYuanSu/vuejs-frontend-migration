@@ -11,13 +11,7 @@ import * as API from './api';
 (function () {
   const data = {
     title: 'My Movie List',
-    listMovies: [
-      {
-        ch_name: '載入中...',
-        eng_name: 'loading...',
-        intro: '',
-      },
-    ],
+    listMovies: [],
   };
 
   Vue.prototype.$service = service;
@@ -37,12 +31,15 @@ import * as API from './api';
       this.GET_MOVIES();
     },
     methods: {
+      ADD_MOVIE: function (movie) {
+        this.listMovies.splice(0, 0, movie);
+      },
       GET_MOVIES: function () {
         const res = this.$service({
           ...API.Movie_List,
         })
           .then((res) => {
-            this.listMovies = res.data
+            this.listMovies = res.data;
             return res.data;
           })
           .catch((error) => {

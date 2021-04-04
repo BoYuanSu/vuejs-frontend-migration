@@ -1,4 +1,4 @@
-<validation-observer v-slot="props" tag="form" @submit.prevent>
+<validation-observer ref="form" v-slot="props" tag="form" @submit.prevent>
     <form-group v-for="field in fields" :key="field.name" v-model="field.value" :name="field.name" :rules="field.rules"
         :label="field.label" :type="field.type" :placeholder="field.placeholder"></form-group>
     <button id="button-insert" type="submit" class="btn btn-primary"

@@ -6,6 +6,7 @@ const FormAddMovie = {
       fields: [
         {
           name: 'input-title-ch',
+          key: 'ch_name',
           label: 'Title in Chinese',
           value: '',
           type: 'text',
@@ -14,6 +15,7 @@ const FormAddMovie = {
         },
         {
           name: 'input-title-eng',
+          key: 'eng_name',
           label: 'Title in Englis',
           value: '',
           type: 'text',
@@ -22,6 +24,7 @@ const FormAddMovie = {
         },
         {
           name: 'input-intro',
+          key: 'intro',
           label: 'Intro',
           value: '',
           type: 'text',
@@ -34,17 +37,19 @@ const FormAddMovie = {
   computed: {
     formData: function () {
       return this.fields.reduce((data, field) => {
-        data[field.name] = field.value;
+        data[field.key] = field.value;
         return data;
       }, {});
     },
   },
   methods: {
     submitHandler: function () {
-      console.log('🚀 ~ submitHandler');
+      this.$emit('add-movie', this.formData)
+      this.reset()
     },
     reset: function () {
       this.fields.forEach((field) => (field.value = ''));
+      this.$refs.form.reset()
     },
   },
 };

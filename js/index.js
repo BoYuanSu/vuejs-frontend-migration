@@ -13,14 +13,9 @@ import * as API from './api';
     title: 'My Movie List',
     listMovies: [
       {
-        ch_name: 'movie_info.ch_name',
-        eng_name: 'movie_info.ch_name',
-        intro: 'movie_info.ch_name',
-      },
-      {
-        ch_name: 'movie_info.ch_name',
-        eng_name: 'movie_info.ch_name',
-        intro: 'movie_info.ch_name',
+        ch_name: '載入中...',
+        eng_name: 'loading...',
+        intro: '',
       },
     ],
   };
@@ -46,13 +41,13 @@ import * as API from './api';
         const res = this.$service({
           ...API.Movie_List,
         })
-        .then(res=>{
-          return res.data
-        })
-        .catch((error) => {
-          return [];
-        });
-        console.log('🚀 ~ GET_MOVIES ~ res', res);
+          .then((res) => {
+            this.listMovies = res.data
+            return res.data;
+          })
+          .catch((error) => {
+            return [];
+          });
       },
     },
   });

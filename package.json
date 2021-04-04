@@ -3,14 +3,18 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "serve": "parcel ./index.html --no-source-maps --no-autoinstall --no-cache",
-    "build": "rm -rf ./dist && parcel build ./index.html -d ./dist --no-source-maps --no-cache"
+    "serve": "parcel ./index.html -d ./dev --no-source-maps --no-autoinstall --no-cache",
+    "build": "rm -rf ./dist && parcel build ./index.html -d ./dist --no-source-maps --no-cache",
+    "run:app": "node app.js"
   },
   "repository": "git@github.com:BoYuanSu/vuejs-frontend-migration.git",
   "author": "BYSu <mayday15221@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "axios": "^0.21.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "http-proxy-middleware": "^1.1.0",
     "promise-polyfill": "^8.2.0",
     "vee-validate": "^3.4.5",
     "vue": "^2.6.12",

@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "dev": "yarn serve & yarn start",
+    "dev:win": "start yarn serve & start yarn start",
     "serve": "parcel ./index.html -d ./dev --no-source-maps --no-autoinstall --no-cache",
     "build": "rm -rf ./dist && parcel build ./index.html -d ./dist --no-source-maps --no-cache",
     "start": "node app.js"
